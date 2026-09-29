@@ -1,10 +1,677 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Narvora Digital Studio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Narvora Digital Studio | Digital Marketing Agency</title>
+
+<meta name="description" content="Narvora Digital Studio helps businesses grow online with SEO, Social Media Marketing, Meta Ads, Google Ads, Analytics, Design and Content Marketing.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(8,8,8,0.95);
+    border-bottom: 1px solid #333;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1150px;
+    margin: auto;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+.logo span {
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav ul li a:hover {
+    color: #d4af37;
+}
+
+.contact-btn {
+    background: #d4af37;
+    color: #000 !important;
+    padding: 10px 17px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 50px;
+    background:
+        radial-gradient(circle at top right, #3b3218, transparent 35%),
+        radial-gradient(circle at bottom left, #211c0d, transparent 35%);
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.small-title {
+    color: #d4af37;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 78px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #d4af37;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #c5c5c5;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 6px;
+    margin: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-gold {
+    background: #d4af37;
+    color: #000;
+}
+
+.btn-outline {
+    border: 1px solid #d4af37;
+    color: #d4af37;
+}
+
+section {
+    padding: 90px 20px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.section-title span {
+    color: #d4af37;
+}
+
+.section-title p {
+    color: #aaa;
+}
+
+.about {
+    background: #101010;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about-text h3 span {
+    color: #d4af37;
+}
+
+.about-text p {
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.stat {
+    border: 1px solid #333;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    background: #151515;
+}
+
+.stat h3 {
+    font-size: 30px;
+    color: #d4af37;
+}
+
+.services {
+    background: #080808;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #121212;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #aaa;
+    font-size: 15px;
+}
+
+.why {
+    background: #101010;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.why-card {
+    text-align: center;
+    padding: 25px;
+}
+
+.why-card h3 {
+    margin: 15px 0 10px;
+    color: #d4af37;
+}
+
+.why-card p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.cta {
+    text-align: center;
+    background:
+        linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),
+        radial-gradient(circle, #4b3d16, #080808);
+}
+
+.cta h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: #bbb;
+    margin-bottom: 25px;
+}
+
+.contact {
+    background: #080808;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 45px 25px;
+}
+
+.contact-box h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    color: #ccc;
+    margin: 10px;
+}
+
+.contact-info strong {
+    color: #d4af37;
+}
+
+footer {
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #292929;
+    color: #888;
+    background: #050505;
+}
+
+footer span {
+    color: #d4af37;
+}
+
+@media (max-width: 800px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
+
 <body>
-    <h1>Welcome to Narvora Digital Studio</h1>
-    <p>Grow Your Business With Smarter Digital Marketing.</p>
+
+<header>
+<nav>
+
+<div class="logo">
+Narvora <span>Digital Studio</span>
+</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#why">Why Us</a></li>
+<li><a href="#contact" class="contact-btn">Contact</a></li>
+</ul>
+
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="small-title">
+NARVORA DIGITAL STUDIO
+</div>
+
+<h1>
+Grow Your Business With
+<span>Smarter Digital Marketing.</span>
+</h1>
+
+<p>
+We help businesses build a strong online presence,
+reach the right audience and generate meaningful growth
+through modern digital marketing strategies.
+</p>
+
+<div class="hero-buttons">
+<a href="#services" class="btn btn-gold">Explore Services</a>
+<a href="#contact" class="btn btn-outline">Let's Talk</a>
+</div>
+
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="section-title">
+<h2>About <span>Us</span></h2>
+<p>Creative ideas. Digital strategies. Business growth.</p>
+</div>
+
+<div class="about-content">
+
+<div class="about-text">
+
+<h3>We Build <span>Digital Growth</span></h3>
+
+<p>
+Narvora Digital Studio is a digital marketing studio focused
+on helping businesses improve their online visibility and connect
+with their target audience.
+</p>
+
+<p>
+Our services combine creativity, marketing strategy,
+advertising and analytics to create a stronger digital presence.
+</p>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>SEO</h3>
+<p>Search Visibility</p>
+</div>
+
+<div class="stat">
+<h3>ADS</h3>
+<p>Paid Advertising</p>
+</div>
+
+<div class="stat">
+<h3>SM</h3>
+<p>Social Media</p>
+</div>
+
+<div class="stat">
+<h3>DATA</h3>
+<p>Analytics</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Our <span>Services</span></h2>
+<p>Digital marketing solutions for modern businesses.</p>
+</div>
+
+<div class="service-grid">
+
+<div class="card">
+<div class="icon">🔍</div>
+<h3>SEO</h3>
+<p>
+Improve your website visibility on search engines
+with keyword research, on-page SEO and content strategies.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Social Media Marketing</h3>
+<p>
+Build your social media presence with engaging content,
+creative campaigns and audience-focused strategies.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📢</div>
+<h3>Meta Ads</h3>
+<p>
+Reach the right audience using targeted Facebook and
+Instagram advertising campaigns.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Google Ads</h3>
+<p>
+Drive targeted traffic and potential customers through
+Google Search and other advertising campaigns.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📊</div>
+<h3>Google Analytics</h3>
+<p>
+Understand website performance and user behaviour
+using data-driven analytics.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>Creative Design</h3>
+<p>
+Create professional social media posts, advertisements,
+banners and promotional designs.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">✍️</div>
+<h3>Content Marketing</h3>
+<p>
+Create useful and engaging content that attracts audiences
+and supports business growth.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📧</div>
+<h3>Email Marketing</h3>
+<p>
+Connect with customers using strategic email campaigns
+and promotional communication.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🚀</div>
+<h3>Digital Strategy</h3>
+<p>
+Develop practical digital strategies designed around
+business goals, audiences and measurable results.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="why" id="why">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Why <span>Narvora?</span></h2>
+<p>A focused approach to digital marketing.</p>
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+<div class="icon">💡</div>
+<h3>Creative</h3>
+<p>Fresh ideas and engaging digital content.</p>
+</div>
+
+<div class="why-card">
+<div class="icon">🎯</div>
+<h3>Targeted</h3>
+<p>Reach audiences that matter to your business.</p>
+</div>
+
+<div class="why-card">
+<div class="icon">📈</div>
+<h3>Data Driven</h3>
+<p>Use analytics to understand campaign performance.</p>
+</div>
+
+<div class="why-card">
+<div class="icon">🤝</div>
+<h3>Business Focused</h3>
+<p>Marketing strategies aligned with business goals.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Ready To Grow Your Business?</h2>
+
+<p>
+Let's build your digital presence and connect your brand
+with the right audience.
+</p>
+
+<a href="#contact" class="btn btn-gold">Start Your Project</a>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Let's <span>Connect</span></h2>
+<p>Have a project in mind? Get in touch with us.</p>
+</div>
+
+<div class="contact-box">
+
+<h3>Narvora Digital Studio</h3>
+
+<div class="contact-info">
+<strong>Email:</strong>
+narvoradigitalstudio@gmail.com
+</div>
+
+<div class="contact-info">
+<strong>Services:</strong>
+SEO • Social Media • Meta Ads • Google Ads • Analytics • Design
+</div>
+
+<div style="margin-top:25px;">
+<a
+href="mailto:narvoradigitalstudio@gmail.com"
+class="btn btn-gold">
+Send Email
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 <span>Narvora Digital Studio</span>.
+All Rights Reserved.
+</p>
+
+</footer>
+
 </body>
 </html>
